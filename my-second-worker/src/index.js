@@ -10,6 +10,6 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		return new Response('Hello multiple workers in one repo!!');
+		return new Response('Testing what config is change by wrangler.jsonc configuration!");
 	},
 };
