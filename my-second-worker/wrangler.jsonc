@@ -7,10 +7,7 @@
 	"name": "my-second-worker",
 	"main": "src/index.js",
 	"compatibility_date": "2025-04-23",
-	"route": {
-		"pattern": "example.org/*",
-		"zone_name": "example.org"
-	},
+	"workers_dev": false,
 	"observability": {
 		"enabled": true
 	}
