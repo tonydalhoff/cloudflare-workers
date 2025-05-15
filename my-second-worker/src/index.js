@@ -10,6 +10,6 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		return new Response('Testing push to feature-branch!');
+		return new Response('Testing push to feature-branch while builds are set to main and PR is open!');
 	},
 };
