@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_tonydalhoff_cloudflare_workers_1750031128280-push-trigger-input-set
+  identifier: Build_tonydalhoff_cloudflare_workers_1750031128280pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_tonydalhoff_cloudflare_workers_1750031128280
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
