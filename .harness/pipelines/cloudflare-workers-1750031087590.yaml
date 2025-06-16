@@ -29,6 +29,10 @@ pipeline:
                       #!/bin/bash
                       echo "Detecting changed directories..."
 
+                      # Setting node version
+                      nvm install 20
+                      nvm use 20
+
                       # Set your base branch (e.g., for PRs)
                       BASE_BRANCH="origin/main"
 
