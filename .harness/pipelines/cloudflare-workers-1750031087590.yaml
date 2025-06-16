@@ -41,7 +41,7 @@ pipeline:
                       git fetch origin main
 
                       # Find top-level subdirectories in packages/ with changes
-                      CHANGED_DIRS=$(git diff --name-only $BASE_BRANCH...HEAD | cut -d/ -f1)
+                      CHANGED_DIRS=$(git diff --name-only $BASE_BRANCH...HEAD | cut -d/ -f1 | sort -u)
 
                       echo "Changed directories:"
                       echo "$CHANGED_DIRS"
