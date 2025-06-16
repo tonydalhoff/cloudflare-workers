@@ -25,8 +25,8 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
-                      # npm run tests
                       echo "Hello, World!"
+                      npm run tests
                   timeout: ""
                   type: Run
                   description: Runs Vitest tests
