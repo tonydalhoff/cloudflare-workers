@@ -21,15 +21,17 @@ pipeline:
             steps:
               - step:
                   identifier: echo
-                  name: echo
+                  name: Run Vitest
                   spec:
-                    command: echo hello world
+                    shell: Sh
+                    command: npm run tests
                   timeout: ""
                   type: Run
+                  description: Runs Vitest tests
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
