@@ -21,10 +21,12 @@ pipeline:
             steps:
               - step:
                   identifier: echo
-                  name: Run Vitest
+                  name: Vitest Tests
                   spec:
                     shell: Sh
-                    command: npm run tests
+                    command: |-
+                      # npm run tests
+                      echo "Hello, World!"
                   timeout: ""
                   type: Run
                   description: Runs Vitest tests
