@@ -23,10 +23,31 @@ pipeline:
                   identifier: echo
                   name: Vitest Tests
                   spec:
-                    shell: Sh
+                    shell: Bash
                     command: |-
-                      echo "Hello, World!"
-                      npm run tests
+                      #!/bin/bash
+                      echo "Detecting changed directories..."
+
+                      # Set your base branch (e.g., for PRs)
+                      BASE_BRANCH="origin/main"
+
+                      # Fetch base branch
+                      git fetch origin main
+
+                      # Find top-level subdirectories in packages/ with changes
+                      CHANGED_DIRS=$(git diff --name-only $BASE_BRANCH...HEAD | cut -d/ -f1)
+
+                      echo "Changed directories:"
+                      echo "$CHANGED_DIRS"
+
+                      # Run tests in each changed dir
+                      for dir in $CHANGED_DIRS; do
+                        echo "Running tests in $dir"
+                        cd $dir
+                        npm install
+                        npm test
+                        cd - > /dev/null
+                      done
                   timeout: ""
                   type: Run
                   description: Runs Vitest tests
