@@ -20,8 +20,9 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
+                  type: Run
                   name: Vitest Tests
+                  identifier: Vitest_Tests
                   spec:
                     shell: Bash
                     command: |-
@@ -48,9 +49,7 @@ pipeline:
                         npm test
                         cd - > /dev/null
                       done
-                  timeout: ""
-                  type: Run
-                  description: Runs Vitest tests
+                  description: Runs Vitest Tests
           platform:
             os: Linux
             arch: Amd64
