@@ -30,21 +30,14 @@ pipeline:
                       #!/bin/bash
                       echo "Detecting changed directories..."
 
-                      # Setting node version
-                      # nvm install 20
-                      # nvm use 20
-
                       # Set your base branch (e.g., for PRs)
                       BASE_BRANCH="origin/main"
 
                       # Fetch base branch
                       git fetch origin main
 
-                      # Find top-level subdirectories in packages/ with changes
+                      # Find top-level subdirectories with changes
                       CHANGED_DIRS=$(git diff --name-only $BASE_BRANCH...HEAD | cut -d/ -f1 | sort -u)
-
-                      echo "Changed directories:"
-                      echo "$CHANGED_DIRS"
 
                       # Run tests in each changed dir
                       for dir in $CHANGED_DIRS; do
