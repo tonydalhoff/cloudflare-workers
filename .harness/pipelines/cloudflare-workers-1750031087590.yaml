@@ -24,6 +24,7 @@ pipeline:
                   name: Vitest Tests
                   identifier: Vitest_Tests
                   spec:
+                    image: node:20
                     shell: Bash
                     command: |-
                       #!/bin/bash
